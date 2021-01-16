@@ -1,0 +1,35 @@
+{
+  "name": "geekbrains-reactjs",
+  "version": "1.0.0",
+  "description": "react app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack --mode development",
+    "server": "webpack-dev-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Alexander-Shiryaev/Geekbrains-ReactJS.git"
+  },
+  "author": "Alexander Shiryaev",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Alexander-Shiryaev/Geekbrains-ReactJS/issues"
+  },
+  "homepage": "https://github.com/Alexander-Shiryaev/Geekbrains-ReactJS#readme",
+  "dependencies": {
+    "@babel/cli": "^7.12.10",
+    "@babel/core": "^7.12.10",
+    "@babel/preset-env": "^7.12.11",
+    "@babel/preset-react": "^7.12.10",
+    "babel-loader": "^8.2.2",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "webpack": "^5.13.0",
+    "webpack-dev-server": "^3.11.1"
+  },
+  "devDependencies": {
+    "webpack-cli": "3.3.12"
+  }
+}
