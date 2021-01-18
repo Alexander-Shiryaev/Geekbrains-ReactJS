@@ -19,7 +19,7 @@ export default class MessageField extends React.Component {
 
 
         return <div className='message'>
-            <div>
+            <div className='author-wrp'>
                 <img className='message__img' src='https://yt3.ggpht.com/a/AATXAJydJwHfUeMRt7VxuHM1KZC6SC_ZSiq1F2YXbEI7=s900-c-k-c0xffffffff-no-rj-mo' alt='img' height='50px'/>
                 {this.state.author}
             </div>
