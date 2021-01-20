@@ -1,15 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-
-const messages = ['Привет', 'Hello, world!', 'Как дела?'];
-
-const MessageComponent = (props) => <div>{props.text}</div>;
-
-const MessageField = (props) => {
-   return props.messages.map(message => <MessageComponent text={ message } />);
-};
+import Layout from './components/Layout/Layout';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 ReactDOM.render(
-   <MessageField messages={ messages } />,
+   <MuiThemeProvider>
+       <Layout />
+   </MuiThemeProvider>,
    document.getElementById('root'),
 );
