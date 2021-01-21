@@ -1,0 +1,15 @@
+.message {
+    display: flex;
+    background-color: #eee;
+    padding: 20px;
+}
+
+.author-wrp {
+    margin-right: 10px;
+}
+
+.message__img {
+    display: block;
+    width: 50px;
+    border-radius: 50px;
+}
