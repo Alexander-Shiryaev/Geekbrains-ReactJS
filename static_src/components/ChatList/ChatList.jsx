@@ -1,19 +1,24 @@
 import React from 'react';
-import List from 'material-ui/styles/MuiThemeProvider';
+import { Link } from 'react-router-dom';
+import { List, ListItem } from 'material-ui/List';
+import ContentSend from 'material-ui/svg-icons/content/send';
 import './ChatList.scss';
 
 export default class ChatList extends React.Component {
     render() {
         return (
             <List>
-                <div className="chat-list layout__item">
-                    <p>chat 1</p>
-                    <p>chat 2</p>
-                    <p>chat 3</p>
-                    <p>chat 4</p>
-                    <p>chat 5</p>
-                </div>
+                <Link to="/chat/1/">
+                    <ListItem primaryText="Chat 1" leftIcon={<ContentSend />} />
+                </Link>
+                <Link to="/chat/2/">
+                    <ListItem primaryText="Chat 2" leftIcon={<ContentSend />} />
+                </Link>
+                <Link to="/chat/3/">
+                    <ListItem primaryText="Chat 3" leftIcon={<ContentSend />} />
+                </Link>
             </List>
         )
     }
-}
+ }
+ 

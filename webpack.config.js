@@ -29,4 +29,11 @@ module.exports = {
         },
     ],
     },
+    devServer: {
+        port: 8080,
+        historyApiFallback: {
+            index: 'index.html'
+        }
+    },
+    // devtool: 'cheap-inline-module-source-map',
 };
