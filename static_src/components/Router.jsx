@@ -1,6 +1,7 @@
 import React from 'react';
-import { Switch, Route } from 'react-router-dom'
+import { Switch, Route } from 'react-router-dom';
 import Layout from './Layout/Layout';
+import Profile from './Profile//Profile';
 
 
 export default class Router extends React.Component {
@@ -18,8 +19,8 @@ export default class Router extends React.Component {
                />
                <Route
                    exact
-                   path='/profile/:profileId/'
-                   render={ obj => <Layout
+                   path='/profile/'
+                   render={ obj => <Profile
                        profileId={ Number(obj.match.params.profileId) }
                    />
                    }
