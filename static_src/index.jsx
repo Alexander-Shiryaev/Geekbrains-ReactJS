@@ -1,14 +1,18 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import Router from './components/Router'
-import { HashRouter } from 'react-router-dom';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import React from "react";
+import ReactDOM from "react-dom";
+import Router from "./containers/Router";
+import { HashRouter } from "react-router-dom";
+import { Provider } from "react-redux";
+import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
+import initStore from "./utils/store";
 
 ReactDOM.render(
-   <HashRouter>
-       <MuiThemeProvider>
-           <Router />
-       </MuiThemeProvider>
-   </HashRouter>,
-   document.getElementById('root'),
+  <Provider store={initStore()}>
+    <HashRouter>
+      <MuiThemeProvider>
+        <Router />
+      </MuiThemeProvider>
+    </HashRouter>
+  </Provider>,
+  document.getElementById("root")
 );
