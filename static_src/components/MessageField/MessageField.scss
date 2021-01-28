@@ -1,0 +1,31 @@
+.message-field {
+    display: flex;
+    flex-direction: column;
+    background-color: #eee;
+    width: 100%;
+    border-radius: 5px 5px 0 0;
+}
+ 
+.message-field-wrapper {
+   width: 100%;
+   margin: 0 auto;
+}
+ 
+.message {
+    background-color: lightblue;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 18px;
+    margin: 16px;
+}
+
+.input {
+   display: flex;
+   padding: 16px;
+}
+ 
+.message-sender {
+    color: gray;
+    font-size: 14px;
+}
+ 

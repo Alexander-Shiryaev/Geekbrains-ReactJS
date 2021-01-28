@@ -1,15 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-
-const messages = ['Привет', 'Hello, world!', 'Как дела?'];
-
-const MessageComponent = (props) => <div>{props.text}</div>;
-
-const MessageField = (props) => {
-   return props.messages.map(message => <MessageComponent text={ message } />);
-};
+import Router from './components/Router';
+import { BrowserRouter } from 'react-router-dom';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 ReactDOM.render(
-   <MessageField messages={ messages } />,
+   <BrowserRouter>
+       <MuiThemeProvider>
+           <Router />
+       </MuiThemeProvider>
+   </BrowserRouter>,
    document.getElementById('root'),
 );

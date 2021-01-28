@@ -1,0 +1,11 @@
+.chat-list {
+    background-color: rgb(76, 171, 209);
+    padding-left: 16px;
+    & p {
+        color: #fff;
+    }
+}
+
+a {
+    text-decoration: none;
+}
