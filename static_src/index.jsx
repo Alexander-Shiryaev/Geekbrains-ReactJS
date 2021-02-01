@@ -1,18 +1,18 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import Router from "./containers/Router";
-import { BrowserRouter } from "react-router-dom";
+import { ConnectedRouter } from 'connected-react-router';
 import { Provider } from "react-redux";
 import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
-import initStore from "./utils/store";
+import initStore, { history } from './utils/store';
 
 ReactDOM.render(
-  <Provider store={initStore()}>
-    <BrowserRouter>
-      <MuiThemeProvider>
-        <Router />
-      </MuiThemeProvider>
-    </BrowserRouter>
+  <Provider store={ initStore() }>
+      <ConnectedRouter history={history}>
+          <MuiThemeProvider>
+              <Router />
+          </MuiThemeProvider>
+      </ConnectedRouter>
   </Provider>,
-  document.getElementById("root")
+  document.getElementById('root'),
 );
