@@ -10,14 +10,14 @@ import initStore, { history } from './utils/store';
 const { store, persistor } = initStore();
 
 ReactDOM.render(
-  <Provider store={ store }>
-      <PersistGate loading={ null } persistor={ persistor }>
-          <ConnectedRouter history={history}>
-              <MuiThemeProvider>
-                  <Router />
-              </MuiThemeProvider>
-          </ConnectedRouter>
-      </PersistGate>
-  </Provider>,
-  document.getElementById('root'),
-);
+    <Provider store={ store }>
+        <PersistGate loading={ null } persistor={ persistor }>
+            <ConnectedRouter history={history}>
+                <MuiThemeProvider>
+                    <Router />
+                </MuiThemeProvider>
+            </ConnectedRouter>
+        </PersistGate>
+    </Provider>,
+    document.getElementById('root'),
+ );

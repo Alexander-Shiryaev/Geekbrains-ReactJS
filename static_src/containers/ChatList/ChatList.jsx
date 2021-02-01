@@ -46,11 +46,13 @@ class ChatList extends React.Component {
   render() {
     const { chats } = this.props;
     const chatElements = Object.keys(chats).map((chatId) => (
+     
         <ListItem
           primaryText={chats[chatId].title}
           leftIcon={<ContentSend />}
           onClick={ () => this.handleNavigate(`/chat/${chatId}`) }
         />
+      
     ));
 
     return (
@@ -82,7 +84,6 @@ const mapStateToProps = ({ chatReducer }) => ({
   chats: chatReducer.chats,
 });
 
-const mapDispatchToProps = (dispatch) =>
-  bindActionCreators({ addChat, push }, dispatch);
+const mapDispatchToProps = dispatch => bindActionCreators({ addChat, push }, dispatch);
 
 export default connect(mapStateToProps, mapDispatchToProps)(ChatList);
