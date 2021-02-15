@@ -8,5 +8,5 @@ export default (history) => combineReducers({
     router: connectRouter(history),
     chatReducer,
     profileReducer,
-    // messageReducer,
+    messageReducer,
 });

@@ -8,8 +8,8 @@ import {
 
 const initialStore = {
   messages: {
-    1: { text: "Привет!", sender: "bot" },
-    2: { text: "Здравствуйте!", sender: "bot" },
+    1: { messageId: 1, chatId: 1, text: "Привет!", sender: "bot" },
+    2: { messageId: 2, chatId: 2, text: "Здравствуйте!", sender: "bot" },
   },
   isLoading: false,
 };

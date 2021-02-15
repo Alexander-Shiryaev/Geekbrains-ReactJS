@@ -42,7 +42,9 @@ export default function chatReducer(store = initialStore, action) {
         isLoading: { $set: false },
       });
     }
+    
     case ADD_CHAT: {
+      
       const chatId = Object.keys(store.chats).length + 1;
       return update(store, {
         chats: {
