@@ -20,7 +20,7 @@ export default function messageReducer(store = initialStore, action) {
       return update(store, {
         messages: {
           $merge: {
-            [action.messageId]: { text: action.text, sender: action.sender },
+            [action.messageId]: { chatId: action.chatId, text: action.text, sender: action.sender },
           },
         },
       });
