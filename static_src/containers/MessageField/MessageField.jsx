@@ -26,9 +26,9 @@ class MessageField extends React.Component {
     this.props.loadMessages();
   }
 
-  handleSendMessage = (message, sender) => {
+  handleSendMessage = (message, sender, chatId, messageId) => {
     if (this.state.input.length > 0 || sender === "bot") {
-      this.props.sendMessage(message, sender);
+      this.props.sendMessage(message, sender, chatId, messageId);
     }
     if (sender === "me") {
       this.setState({ input: "" });
@@ -55,6 +55,7 @@ class MessageField extends React.Component {
     const messageElements = chats[chatId].messageList.map((messageId) => (
       <Message
         key={messageId}
+        chatId={messages[messageId].chatId}
         text={messages[messageId].text}
         sender={messages[messageId].sender}
       />
