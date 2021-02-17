@@ -2,6 +2,8 @@ import React from "react";
 import PropTypes from "prop-types";
 import { bindActionCreators } from "redux";
 import connect from "react-redux/es/connect/connect";
+import CircularProgress from "material-ui/CircularProgress";
+import { sendMessage, loadMessages } from "../../actions/messageActions";
 import { TextField, FloatingActionButton } from "material-ui";
 import SendIcon from "material-ui/svg-icons/content/send";
 import Message from "../../components/Message";
@@ -13,6 +15,7 @@ class MessageField extends React.Component {
     messages: PropTypes.object.isRequired,
     chats: PropTypes.object.isRequired,
     sendMessage: PropTypes.func.isRequired,
+    isLoading: PropTypes.bool.isRequired,
   };
 
   //   constructor(props) {
@@ -23,6 +26,16 @@ class MessageField extends React.Component {
   state = {
     input: "",
   };
+
+  componentDidMount() {
+    fetch("/api/messages.json")
+      .then((body) => body.json())
+      .then((json) => {
+        json.forEach((msg) => {
+          this.props.sendMessage(msg.text, msg.sender, msg.id, msg.chatId);
+        });
+      });
+  }
 
   handleSendMessage = (message, sender) => {
     if (this.state.input.length > 0 || sender === "bot") {
@@ -44,18 +57,11 @@ class MessageField extends React.Component {
     }
   };
 
-  componentDidMount() {
-    fetch('/api/messages.json'
-    ).then(body => body.json()).
-    then(json => {
-        json.forEach(msg => {
-            this.props.sendMessage( msg.text, msg.sender, msg.id, msg.chatId);
-        })
-    })
- }
-
-
   render() {
+    if (this.props.isLoading) {
+      return <CircularProgress />;
+    };
+    
     const { chatId, messages, chats } = this.props;
 
     const messageElements = chats[chatId].messageList.map((messageId) => (
