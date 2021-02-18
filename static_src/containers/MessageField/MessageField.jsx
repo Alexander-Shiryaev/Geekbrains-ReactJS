@@ -18,11 +18,6 @@ class MessageField extends React.Component {
     isLoading: PropTypes.bool.isRequired,
   };
 
-  //   constructor(props) {
-  //     super(props);
-  //     this.textInput = React.createRef();
-  //   }
-
   state = {
     input: "",
   };
