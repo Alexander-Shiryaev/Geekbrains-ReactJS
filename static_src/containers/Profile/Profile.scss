@@ -1,0 +1,8 @@
+.profile-wrapper {
+    padding: 20px;
+    background-color: #ccc;
+    & img {
+        display: block;
+        margin-bottom: 16px;
+    }
+}
