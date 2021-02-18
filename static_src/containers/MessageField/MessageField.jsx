@@ -76,18 +76,19 @@ class MessageField extends React.Component {
       <div key="messageElements" className="message-field">
         {messageElements}
       </div>,
-      <div key="textInput" style={{ width: "100%", display: "flex" }}>
+      <div key="textInput" style={{ width: "100%", display: "flex", padding: "16px" }}>
         <TextField
           name="input"
           fullWidth={true}
-          hintText="Введите сообщение"
-          style={{ fontSize: "22px" }}
+          hintText="Введите сообщение..."
+          style={{ fontSize: "18px" }}
           onChange={this.handleChange}
           value={this.state.input}
           onKeyUp={this.handleKeyUp}
         />
         <FloatingActionButton
           onClick={() => this.handleSendMessage(this.state.input, "me")}
+          style={{marginRight: "32px"}}
         >
           <SendIcon />
         </FloatingActionButton>

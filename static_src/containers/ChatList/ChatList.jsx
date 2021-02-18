@@ -65,6 +65,7 @@ class ChatList extends React.Component {
           style={{ height: "60px" }}
           children={
             <TextField
+            style={{fontSize: "14px"}}
               key="textField"
               fullWidth
               name="input"
